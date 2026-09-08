@@ -508,7 +508,7 @@ export async function persistPluginInstall(params: {
         warn,
       });
       runtime.log(
-        "Plugin source changes take effect on the next Gateway start. A running managed Gateway with config reload enabled restarts automatically; otherwise, restart it manually.",
+        "Plugin source changes take effect on the next Gateway start. Installs performed by the running Gateway request an automatic restart when config reload is enabled; installs from a separate shell, or with config reload off, require a manual Gateway restart. Configuration reload can restart connected channels before that Gateway restart.",
       );
       return next;
     });
