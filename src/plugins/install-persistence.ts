@@ -507,7 +507,9 @@ export async function persistPluginInstall(params: {
         install: params.install,
         warn,
       });
-      runtime.log("Restart the gateway to load plugins.");
+      runtime.log(
+        "Plugin source changes take effect on the next Gateway start. A running managed Gateway with config reload enabled restarts automatically; otherwise, restart it manually.",
+      );
       return next;
     });
   } finally {
